@@ -1,23 +1,35 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
-
+import Home from './components/Home';
+import Form from './components/Form';
+import Form2 from './components/Form2';
+import Context from './components/useContext/Context';
+import UseRef from './components/UseRef';
+import Callback from './components/callback/Callback';
+import Memo from './components/usememo/Memo';
+import UseReducer from './components/useReducer/UseReducer';
+import UsePostHookComponent from './components/UsePostHookComponent';
+import TabSlider from './TabSlider';
+import SliderSlick from "./components/SliderSlick"
 function App() {
+  // const [names,setName]=useState('')
+  // function getname(name){
+  //  setName(name)
+  // } Home component
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+      <h1>Practice</h1> <hr />
+      {/* <Home getname={getname}/>{names} */}
+      {/* <Form/> */}
+      {/* <Form2/> */}
+      {/* <Context/> */}
+      {/* <UseRef /> */}
+      {/* <Callback/> */}
+      {/* <Memo/> */}
+      {/* <UseReducer/> */}
+      {/* <UsePostHookComponent /> */}
+      {/* <TabSlider /> */}
+      <SliderSlick />
     </div>
   );
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to jquery tutorial..</h2>
+    <center>
+
+        <button class="hide">hide</button><br><br>
+        <button class="show">show</button>
+        <p class="para1">this is a paragraph</p>
+        <input type="text" value="value">
+
+        <!-- text() - Sets or returns the text content of selected elements
+            html() - Sets or returns the content of selected elements (including HTML markup)
+            val() - Sets or returns the value of form fields -->
+
+            <!-- change css -->
+            <!-- $("p"). css (" background-color ", " pink "); -->
+
+            <!-- jQuery - AJAX -->
+            <!-- $(selector).load(URL,data,callback); -->
+
+            <!-- $.get or $.post        -->
+            <!-- $("button").click(function(){
+                $.post("demo_test_post.asp",
+                {
+                  name: "Donald Duck",
+                  city: "Duckburg"
+                },
+                function(data, status){
+                  alert("Data: " + data + "\nStatus: " + status);
+                });
+              }); -->
+<button class="fetch">Fetch Data</button>
+    </center>
+    <script>
+        $(document).ready(function(){
+            $('.hide').click(function(){
+                $('.para1').hide()
+            })
+            $('.show').dblclick(function(){
+                $('.para1').toggle()
+            })
+            $('input').focus(function(){
+                $(this).css('background-color','yellow')
+            })
+            $('input').blur(function(){
+                $(this).css('background-color','white')
+            })
+            $('.show').click(function(){
+                alert($('.para1').html('<h1>heading</h1>'))
+            })
+            $('.fetch').click(function(){
+                $.get('https://jsonplacehlder.typicode.com/todos/1',function(data,status){
+                    console.log(status);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

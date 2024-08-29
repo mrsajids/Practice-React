@@ -1,0 +1,74 @@
+:root {
+  --secondary-color: #000000;
+  --primary-color: #4b4b63;
+}
+
+.tabs {
+  display: flex;
+  position: relative;
+  padding: 0.75rem;
+  justify-content: space-around;
+  overflow: hidden;
+}
+
+.tab {
+  flex: 1; /* Allow tabs to take up equal space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+  max-width: 280px; /* Max width for larger screens */
+}
+
+.tab.active {
+  color: var(--primary-color);
+}
+
+.tab.active .notification {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.tab.active .slider-svg {
+  fill: #23bd9e !important;
+}
+
+.tabs .glider {
+  position: absolute;
+  bottom: 0;
+  height: 3.5px;
+  width: calc(100% / 3); /* Width based on the number of tabs */
+  background-color: #222;
+  z-index: 1;
+  transition: transform 0.25s ease-out;
+}
+
+.tabs.active-glide-1 .glider {
+  transform: translateX(-100%);
+}
+
+.tabs.active-glide-2 .glider {
+  transform: translateX(0%);
+}
+
+.tabs.active-glide-3 .glider {
+  transform: translateX(100%);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .tab {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tab {
+    font-size: 0.8rem;
+    height: 35px;
+  }
+}
