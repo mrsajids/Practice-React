@@ -11,6 +11,8 @@ import UseReducer from './components/useReducer/UseReducer';
 import UsePostHookComponent from './components/UsePostHookComponent';
 import TabSlider from './TabSlider';
 import SliderSlick from "./components/SliderSlick"
+
+import { UserProfilePic } from './components/ProfilePage';
 function App() {
   // const [names,setName]=useState('')
   // function getname(name){
@@ -18,7 +20,7 @@ function App() {
   // } Home component
   return (
     <div className="">
-      <h1>Practice</h1> <hr />
+      {/* <h1>Practice</h1> <hr /> */}
       {/* <Home getname={getname}/>{names} */}
       {/* <Form/> */}
       {/* <Form2/> */}
@@ -29,7 +31,9 @@ function App() {
       {/* <UseReducer/> */}
       {/* <UsePostHookComponent /> */}
       {/* <TabSlider /> */}
-      <SliderSlick />
+      {/* <SliderSlick /> */}
+      <UserProfilePic />
+
     </div>
   );
 }
