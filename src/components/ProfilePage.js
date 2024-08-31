@@ -1,8 +1,26 @@
+import { useRef, useState } from "react";
 import "../App.css"
 
 
 
 export const UserProfilePic = () => {
+    const [image, setImage] = useState(null);
+    const groupProfRef = useRef(null);
+    const groupBackRef = useRef(null);
+
+    const handleImageClick = () => {
+        // Trigger the file input's click event
+        groupProfRef.current.click();
+    };
+
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const imageURL = URL.createObjectURL(file);
+            setImage(imageURL);
+        }
+    };
     return (
         <div>
 
@@ -20,9 +38,18 @@ export const UserProfilePic = () => {
 
                         <div className="profile">
 
-                            <img src="https://st2.depositphotos.com/1104517/11965/v/950/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg" className="rounded-circle" width="80" />
+                            <img src={`${image ? image : 'https://st2.depositphotos.com/1104517/11965/v/950/depositphotos_119659092-stock-illustration-male-avatar-profile-picture-vector.jpg'}`} className="rounded-circle" width="80" onClick={handleImageClick} />
 
                         </div>
+
+                    </div>
+
+                    <div>
+
+                        <input type="file" accept="image/*" onChange={handleImageChange} ref={groupProfRef}
+                            style={{ display: 'none' }} />
+                        <input type="file" accept="image/*" onChange={handleImageChange} ref={groupProfRef}
+                            style={{ display: 'none' }} />
 
                     </div>
 
